@@ -43,6 +43,7 @@ KrrMirtePddl::~KrrMirtePddl()
 
 void KrrMirtePddl::execute_plan(){
   // Compute the plan
+  rclcpp::sleep_for(std::chrono::milliseconds(1000));
   auto domain = domain_expert_->getDomain();
   auto problem = problem_expert_->getProblem();
   auto plan = planner_client_->getPlan(domain, problem);
